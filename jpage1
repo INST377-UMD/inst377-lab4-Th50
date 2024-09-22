@@ -1,0 +1,20 @@
+function alertName() {
+  let name = document.getElementById("nameInput").value;
+  alert("Hi " + name + "!");
+}
+
+let isBlue = true;
+function changeColor() {
+  document.body.style.backgroundColor = isBlue ? "green" : "blue";
+  isBlue = !isBlue;
+}
+
+function validateText() {
+  let text = document.getElementById("textInput").value;
+  let validation = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/;
+  alert(validation.test(text) ? "Special characters are not allowed." : "Text is valid.");
+}
+
+function addText() {
+  document.getElementById("pageTitle").innerHTML += " Add Text";
+}
