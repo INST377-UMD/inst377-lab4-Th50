@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>INST377 - Lab 4</title>
+  <style>
+    body {
+      background-color: lightgray; /* Set the page's background color */
+    }
+    section {
+      border: 1px solid black;
+      padding: 20px;
+      margin: 10px;
+      background-color: white; /* Uniform background color for all sections */
+      color: black; /* Set text color to black for readability */
+    }
+  </style>
+</head>
+<body>
+  <section id="alert-me-section">
+    <form id="alertForm">
+      <input type="text" id="nameInput" placeholder="Enter your name" required>
+      <button type="button" onclick="alertName()">Alert Me</button>
+    </form>
+  </section>
+
+  <section id="change-color-section">
+    <button onclick="changeColor()">Change Color</button>
+  </section>
+
+  <section id="text-tester-section">
+    <form id="textTesterForm">
+      <input type="text" id="textInput" placeholder="Enter text" required>
+      <button type="button" onclick="validateText()">Validate Text</button>
+    </form>
+  </section>
+
+  <section id="add-text-section">
+    <button onclick="addText()">Add Text</button>
+    <h1 id="pageTitle">INST377 - Lab 4</h1>
+  </section>
+
+  <script>
+    function alertName() {
+      let name = document.getElementById("nameInput").value;
+      alert("Hi " + name + "!");
+    }
+
+    let isBlue = true;
+    function changeColor() {
+      document.body.style.backgroundColor = isBlue ? "green" : "blue";
+      isBlue = !isBlue;
+    }
+
+    function validateText() {
+      let text = document.getElementById("textInput").value;
+      let validation = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/;
+      alert(validation.test(text) ? "Special characters are not allowed." : "Text is valid.");
+    }
+
+    function addText() {
+      document.getElementById("pageTitle").innerHTML += " Add Text";
+    }
+  </script>
+</body>
+</html>
